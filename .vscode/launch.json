@@ -1,0 +1,157 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "name": "Launch test files with TestCafe",
+      "program": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr/node_modules/.bin/testcafe",
+      "args": ["__tests__/testcafe/fixtures/get-menu.test.cf.ts"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": false,
+      "outputCapture": "std",
+      "cwd": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "scaffolding-cli",
+      "program": "${workspaceFolder}/packages/scaffolding-cli/dist/index.js",
+      "cwd": "${workspaceFolder}/packages/scaffolding-cli",
+      "protocol": "inspector",
+      "outFiles": ["${workspaceFolder}/packages/scaffolding-cli/dist/*/.js"],
+      "console": "internalConsole",
+      "preLaunchTask": "RunBuildCli",
+      "outputCapture": "std",
+      "sourceMaps": true,
+      "disableOptimisticBPs": false,
+      "env": {
+        "NODE_ENV": "dev",
+        "LOG_LEVEL": "debug",
+        "COMMAND_TO_RUN": "ininTemplateCli"
+      },
+      "args": [
+        "run",
+        "-c",
+        "src/__tests__/domain/netcore.bootstrap-config.json"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "vscode-jest-tests",
+      "program": "${workspaceFolder}/packages/scaffolding-cli/node_modules/.bin/jest",
+      "protocol": "inspector",
+      "cwd": "${workspaceFolder}/packages/scaffolding-cli",
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": false,
+      "outputCapture": "std",
+      "args": [
+        "--runInBand",
+        "--config jest.config.json",
+        // "--coverage",
+        "--env=node",
+        // "--ci",
+        "--colors",
+        // "${workspaceFolder}/packages/scaffolding-cli/src/__tests__/domain/config/worker_maps/shared.test.ts"
+        "${workspaceFolder}/packages/scaffolding-cli/src/__tests__/domain/prompt.test.ts"
+        // "${workspaceFolder}/packages/scaffolding-cli/src/__tests__/domain/config/static.config.test.ts"
+      ],
+      "env": {
+        "NODE_ENV": "dev"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "scaffolding-cli:debug:test:jest",
+      "program": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr/node_modules/.bin/jest",
+      "protocol": "inspector",
+      "cwd": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr",
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": false,
+      "outputCapture": "std",
+      "args": [
+        "--runInBand",
+        "--c ${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr/node_modules/@amidostacks/pact-config/jest-pact.config.json",
+        "--roots=${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr",
+        "--colors"
+      ],
+      "env": {
+        "CI": "true",
+        "NODE_ENV": "dev",
+        "PACT_CONSUMER": "GenericMenuConsumer",
+        "PACT_PROVIDER": "MenuAPI",
+        "PACT_BROKER": "https://amido-stacks.pact.dius.com.au",
+        "PACT_BEARER_TOKEN": "FILL_ME_IN"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "debug:test:jest",
+      "program": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr/node_modules/.bin/jest",
+      "protocol": "inspector",
+      "cwd": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr",
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": false,
+      "outputCapture": "std",
+      "args": [
+        "--runInBand",
+        "--c ${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr/node_modules/@amidostacks/pact-config/jest-pact.config.json",
+        "--roots=${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr",
+        "--colors"
+      ],
+      "env": {
+        "CI": "true",
+        "NODE_ENV": "dev",
+        "PACT_CONSUMER": "GenericMenuConsumer",
+        "PACT_PROVIDER": "MenuAPI",
+        "PACT_BROKER": "https://amido-stacks.pact.dius.com.au",
+        "PACT_BEARER_TOKEN": "FILL_ME_IN"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "templated-web-app",
+      "program": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr/dist/server/index.js",
+      "cwd": "${workspaceFolder}/packages/scaffolding-cli/templates/src/ssr",
+      "protocol": "inspector",
+      "sourceMaps": true,
+      "console": "internalConsole",
+      "outputCapture": "std",
+      // "preLaunchTask": "RunBuildTemplatedApp",
+      "env": {
+        "NODE_ENV": "development",
+        "LOG_LEVEL": "debug",
+        "PORT": "3000",
+        "AUTH0_CLIENT_SECRET": "",
+        "AUTH0_DOMAIN": "amidostacks.eu.auth0.com",
+        "AUTH0_CLIENT_ID": "",
+        "APPINSIGHTS_INSTRUMENTATIONKEY": "",
+        "APP_BASE_PATH": "",
+        "APP_BASE_URL": "http://localhost",
+        "MENU_API_URL": "http://dev.amidostacks.com/api/menu",
+        "PACT_BROKER": "https://amido-stacks.pact.dius.com.au",
+        "NEXT_PUBLIC_CONTENTFUL_SPACE_ID": "12345",
+        "NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN": "",
+        "REDIS_PORT": "6379",
+        "REDIS_HOST": "127.0.0.1",
+        "REDIS_PASSWORD": "",
+        "REDIS_ENABLED": "true"
+      },
+      "args": [
+        // "--project tsconfig.server.json"
+      ]
+    }
+  ]
+}

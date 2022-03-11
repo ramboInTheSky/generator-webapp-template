@@ -1,0 +1,18 @@
+{
+  "projectName": "replace_projectName",
+  "projectType": "replace_projectType",
+  "platform": "replace_platform",
+  "deployment": "replace_deployment",
+  "cloudRegion": "replace_cloudRegion",
+  "cloudResourceGroup": "replace_cloudResourceGroup",
+  "businessCompany": "replace_businessCompany",
+  "businessProject": "replace_businessProject",
+  "businessDomain": "replace_businessDomain",
+  "businessComponent": "replace_businessComponent",
+  "sourceControlRepoType": "replace_sourceControlRepoType",
+  "sourceControlRepoName": "replace_sourceControRepoName",
+  "sourceControlRepoUrl": "replace_sourceControlRepoUrl",
+  "terraformBackendStorage": "replace_terraformBackendStorage",
+  "terraformBackendStorageRg": "replace_terraformBackendStorageRg",
+  "terraformBackendStorageContainer": "replace_terraformBackendStorageContainer"
+}

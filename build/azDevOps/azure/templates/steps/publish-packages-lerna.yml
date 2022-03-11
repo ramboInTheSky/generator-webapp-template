@@ -1,0 +1,30 @@
+############################################################################################################
+# desc: Publish packages using lerna. IMPORTANT: The package versions must be bumped first and the changes
+# committed. This will ONLY look for changes between the package.json version and the registry.
+# params: versionSpec, working directory, GIT CONFIG as defined as ENV variables or in a pipeline library
+# return: npm packages are published to the registry, version bumped in github
+# pre-reqs: Dependencies must be installed, .npmrc configured, changes are merged to master
+################s############################################################################################
+
+parameters:
+  versionSpec: ''
+  workingDirectory: ''
+  customRegistry: ''
+
+steps:
+  # Ensure Node.js 12 is active
+  - task: NodeTool@0
+    inputs:
+      versionSpec:  ${{ parameters.versionSpec }}
+      customRegistry: ${{ parameters.customRegistry }}
+    displayName: 'Use Node.js ${{ parameters.versionSpec }}'
+
+  # Publish the newly versioned packages to specified registries
+  - task: Npm@1
+    displayName: 'Publish: Publish packages using lerna'
+    inputs:
+      command: 'custom' # Options: install, publish, custom
+      customCommand: 'run publish'
+      workingDir: ${{ parameters.workingDirectory }}
+      verbose: true
+      customRegistry: ${{ parameters.customRegistry }}

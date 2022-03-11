@@ -1,0 +1,129 @@
+#############################################################################################################################
+# This is a generated file which includes some replacements.                                                                #
+# It is still very much recommended to go through this and ensure all variables are correct for your business/domain        #
+# All variables are defined in a global scope.                                                                              #
+# All Terraform produced resource names are using a labels module ensuring a predictable naming convention                  #
+# E.g.: variables for company, project, stage and component will produce a name of `$company-$project-$stage-$componenet`   #
+# NB: Some resources e.g. blob storage only allow for alpha numeric characters so the name is adjusted accordingly          #
+#  ==> `$company$project$stage$componenet`                                                                                  #
+#############################################################################################################################
+name: '$(build.sourcebranchname)-init'
+
+pr: none
+trigger:
+  branches:
+    include:
+    - '*'
+
+  paths:
+    include:
+    - 'packages/scaffolding-cli/templates/build/*'
+    - 'packages/scaffolding-cli/templates/deploy/gcp/*'
+
+resources:
+  repositories:
+  - repository: templates
+    type: github
+    name: amido/stacks-pipeline-templates
+    ref: refs/tags/v1.4.4
+    endpoint: amidostacks
+  containers:
+  - container: k8s_deploy
+    image: amidostacks/ci-k8s:0.0.10
+  - container: terraform_custom
+    image: amidostacks/ci-tf:0.0.4
+
+variables:
+  company: amido
+  project: stacks
+  domain: core
+  component: infra
+  # Versioning
+  version_major: 0
+  version_minor: 0
+  version_revision: $[counter(join(variables['version_major'], join('-', variables['version_minor'])), 0)]
+  version_build_number: "$(version_major).$(version_minor).$(version_revision)-$(Build.SourceBranchName)"
+  # SelfConfig
+  self_repo: stacks-webapp-template/packages/scaffolding-cli/templates
+  self_repo_tf_src: deploy/gcp/infra/stacks-gke
+  # TF STATE CONFIG
+  tf_state_rg: amido-stacks-rg-uks
+  tf_state_storage: amidostackstfstategbl
+  tf_state_container: tfstate
+  # Stacks operates Terraform states based on workspaces **IT IS VERY IMPORTANT** that you ensure a unique name for each application definition
+  # Furthermore **IT IS VERY IMPORTANT** that you change the name of a workspace for each deployment stage
+  # there are some best practices around this if you are going for feature based environments
+  # - we suggest you create a runtime variable that is dynamically set based on a branch currently running
+  # **`terraform_state_workspace: `** all states will be saved under this key for this definition
+  # avoid running anything past dev that is not on master
+  # sample value: sharedservices
+  tf_state_key: gke-infra
+  # Docker Config
+  # SEE OUTPUTTED VALUE from Infra Bootstrap stage
+  # AKS/AZURE
+  # This will always be predictably named by setting your company - project - stage - location - compnonent names above
+  # IT IS SET per stage as an output to be consumed by deploy stage
+  gke_cluster_version: "1.16.10-gke.8"
+  gcp_region: europe-west2
+  gcp_project_name: amido-stacks
+  # DEFAULT IMAGE RUNNER
+  pool_vm_image: ubuntu-18.04
+  # Ensure you find this definition in the K8s and Azure steps to prefix with desired subdomain assignment
+  base_domain: gke.nonprod.amidostacks.com
+
+stages:
+- stage: nonprod
+  variables:
+  # You can find notes in the READMEs around which values to use for each ENV variable group
+  - group: amido-stacks-infra-credentials-nonprod
+  jobs:
+  - job: InfraNonProd
+    pool:
+      vmImage: ubuntu-18.04
+    container: terraform_custom
+    steps:
+      - checkout: self
+      - checkout: templates
+        persistCredentials: true
+        env:
+          GOOGLE_CREDENTIALS: $(GOOGLE_CREDENTIALS)
+      - bash: |
+          echo '##vso[build.updatebuildnumber]$(version_build_number)'
+        displayName: 'Update: Build Number'
+      # Create TF infra
+      - template: azDevOps/azure/templates/v2/steps/deploy-terraform-meta-generic.yml@templates
+        parameters:
+          # Terraform Basic Config
+          working_dir: '$(Agent.BuildDirectory)/s/$(self_repo)/$(self_repo_tf_src)'
+          # changing this would require changing the downstream consumers of these outputs
+          #
+          terraform_output_artefact: 'tfoutputs'
+          # Auth config
+          # IF you are using a backend in GCP you should REMOVE all ARM_* references and adjust the
+          terraform_auth_properties: {
+            GOOGLE_CREDENTIALS: $(GOOGLE_CREDENTIALS)
+          }
+          # Terraform State Config
+          # Adjust the below if your state is kept in another backend type
+          terraform_init_backend_config: '-backend-config="bucket=amido-stacks-terraform-state" -backend-config="prefix=$(domain)"'
+          terraform_state_workspace: nonprod
+          # Global Config
+          tags: ''
+          # Terraform Resource Specific Config
+          terraform_extra_properties: {
+            TF_VAR_project: $(GCP_PROJECT),
+            TF_VAR_location: $(gcp_region),
+            TF_VAR_region: $(gcp_region),
+            TF_VAR_name_company: $(company),
+            TF_VAR_name_project: $(project),
+            TF_VAR_name_component: $(domain),
+            TF_VAR_name_environment: nonprod,
+            TF_VAR_cluster_version: $(gke_cluster_version),
+            TF_VAR_stage: nonprod,
+            TF_VAR_is_cluster_private: true,
+            TF_VAR_dns_zone: $(base_domain)
+          }
+          terraform_output_commands: |
+            raw_tf=$(terraform output -json | jq -r 'keys[] as $k | "##vso[task.setvariable variable=\($k);isOutput=true]\(.[$k] | .value)"')
+            readarray -t outputs <<<"$raw_tf"
+            for i in "${outputs[@]}"; do echo "$i"; done

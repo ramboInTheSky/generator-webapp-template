@@ -1,0 +1,59 @@
+name: $(build.SourceBranchName)-init
+
+trigger:
+  branches:
+    include:
+    - "master"
+  paths:
+    include:
+    - deploy/*
+    - packages/*
+    - build/*
+    exclude: 
+    - packages/scaffolding-cli/templates/*
+
+pr:
+- master
+
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: amido/stacks-pipeline-templates
+      ref: refs/tags/v1.4.2
+      endpoint: amidostacks
+
+  containers:
+    - container: sonar_scanner
+      image: amidostacks/ci-sonarscanner:0.0.1
+    - container: k8s_deploy
+      image: amidostacks/ci-k8s:0.0.6
+    - container: terraform_custom
+      image: amidostacks/ci-tf:0.0.1
+
+variables:
+  company: amido
+  project: stacks
+  # DEFAULT IMAGE RUNNER
+  pool_vm_image: ubuntu-18.04
+  versionSpec: 12.x
+
+stages:
+- stage: Build
+  variables:
+  - group: amido-stacks-infra-credentials-nonprod
+  - group: amido-stacks-webapp
+
+  jobs:
+  - template: templates/jobs/build.yml
+    parameters:
+      pool:
+        vmImage: $(pool_vm_image)
+      versionSpec: $(versionSpec)
+      jobName: 'StacksTemplatePackages'
+      project_root_dir: $(Build.SourcesDirectory)
+      # Custom registry for publishing
+      customRegistry: 'useNpmrc'
+      # Testing
+      unit_test: true
+      

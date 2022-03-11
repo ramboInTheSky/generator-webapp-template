@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mainWorker class javaSerenityTfs with correct files 1`] = `
+Array [
+  "/testProjectName.bootstrap-config.json",
+  "/testProjectName/.mvn/wrapper/maven-wrapper.jar",
+  "/testProjectName/.mvn/wrapper/maven-wrapper.properties",
+  "/testProjectName/README.md",
+  "/testProjectName/build/azDevOps/azure/azure-pipeline-post-deploy-serenity-frontend.yml",
+  "/testProjectName/mvnw",
+  "/testProjectName/mvnw.cmd",
+  "/testProjectName/pom.xml",
+  "/testProjectName/serenity.properties",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/fixtures/AuthorizationRequestActions.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/fixtures/GenericPageSteps.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/fixtures/OAuthConfigurations.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/fixtures/Requests.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/models/AuthorizationRequest.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/models/Category.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/models/Item.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/models/Menu.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/models/ResponseWrapper.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/pages/BlogPage.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/pages/CreateMenuPage.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/pages/MainPage.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/starter/CucumberTestSuiteUI.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/starter/Hooks.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/starter/stepdefinitions/CreateMenuStepDefinitions.java",
+  "/testProjectName/src/test/java/uk/co/testcomp/testproject/ui/starter/stepdefinitions/SearchMenuStepDefinitions.java",
+  "/testProjectName/src/test/resources/features/CreateMenu.feature",
+  "/testProjectName/src/test/resources/features/RedirectToBlogPage.feature",
+  "/testProjectName/src/test/resources/features/SearchMenu.feature",
+  "/testProjectName/src/test/resources/logback-test.xml",
+  "/testProjectName/src/test/resources/serenity.conf",
+]
+`;
+
+exports[`mainWorker class jsTestcafe with correct files 1`] = `
+Array [
+  "/testProjectName.bootstrap-config.json",
+  "/testProjectName/.eslintrc",
+  "/testProjectName/.testcaferc.json",
+  "/testProjectName/README.md",
+  "/testProjectName/api/menu.ts",
+  "/testProjectName/build/azDevOps/azure/azure-pipeline-post-deploy-testcafe.yml",
+  "/testProjectName/environment-variables.ts",
+  "/testProjectName/fixtures/get-menu.test.cf.ts",
+  "/testProjectName/fixtures/yumido.test.axe.cf.ts",
+  "/testProjectName/package-lock.json",
+  "/testProjectName/package.json",
+  "/testProjectName/tsconfig.testcafe.json",
+  "/testProjectName/utils/utils.cf.ts",
+]
+`;
+
+exports[`mainWorker class netcoreSeleniumTfs with correct files 1`] = `
+Array [
+  "/testProjectName.bootstrap-config.json",
+  "/testProjectName/.dockerignore",
+  "/testProjectName/Api/Builders/Http/HttpRequestBuilder.cs",
+  "/testProjectName/Api/Builders/Http/HttpRequestFactory.cs",
+  "/testProjectName/Configuration/ConfigAccessor.cs",
+  "/testProjectName/Configuration/ConfigModel.cs",
+  "/testProjectName/README.md",
+  "/testProjectName/Selenium/Components/CreateForm.cs",
+  "/testProjectName/Selenium/Components/Header.cs",
+  "/testProjectName/Selenium/Components/MenuList.cs",
+  "/testProjectName/Selenium/Components/Notifier.cs",
+  "/testProjectName/Selenium/Factory/RemoteWebDriverFactory.cs",
+  "/testProjectName/Selenium/Factory/WebDriverFactory.cs",
+  "/testProjectName/Selenium/Pages/PageObject.cs",
+  "/testProjectName/Selenium/SeleniumWrapper.cs",
+  "/testProjectName/Testcomp.Testproject.E2E.Selenium.csproj",
+  "/testProjectName/Testcomp.Testproject.E2E.Selenium.sln",
+  "/testProjectName/Tests/Fixtures/BaseSetup.cs",
+  "/testProjectName/Tests/Steps/CreateMenu.cs",
+  "/testProjectName/Tests/Stories/GetMenuExampleTests.cs",
+  "/testProjectName/appsettings.json",
+]
+`;

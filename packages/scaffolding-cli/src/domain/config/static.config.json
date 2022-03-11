@@ -1,0 +1,717 @@
+{
+  "shared": {
+    "gitRepo": "",
+    "gitRef": "",
+    "localPath": "",
+    "folderMap": [
+      {
+        "src": "shared/_gitignore",
+        "dest": "./.gitignore"
+      }
+    ]
+  },
+  "ssr": {
+    "gitRepo": "https://github.com/amido/stacks-typescript-ssr.git",
+    "gitRef": "e6804f2c87548624d61814f7ed5f0f032dc676ec",
+    "localPath": "src/ssr",
+    "folderMap": [
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/ssr/build/azDevOps/azure/templates",
+        "dest": "build/azDevOps/azure/templates"
+      },
+      {
+        "src": "src/ssr/build/azDevOps/azure/azure-pipelines-ssr-aks.yml",
+        "dest": "build/azDevOps/azure/azure-pipelines-ssr-aks.yml"
+      },
+      {
+        "src": "src/ssr/deploy/azure/app/kube",
+        "dest": "deploy/azure/app/kube"
+      },
+      {
+        "src": "src/ssr/deploy/k8s/app/base_app-deploy.yml",
+        "dest": "deploy/k8s/app/base_app-deploy.yml"
+      },
+      {
+        "src": "src/ssr/test/testcafe",
+        "dest": "test/testcafe"
+      },
+      {
+        "src": "src/ssr/src/ssr",
+        "dest": "src/ssr"
+      },
+      {
+        "src": "src/ssr/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/ssr/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "src/ssr/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "csr": {
+    "gitRepo": "https://github.com/amido/stacks-typescript-csr.git",
+    "gitRef": "90b45d100f46a6c01d78f3266d3aece45a0e33aa",
+    "localPath": "src/csr",
+    "folderMap": [
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/csr/build/azDevOps/azure",
+        "dest": "build/azDevOps/azure"
+      },
+      {
+        "src": "src/csr/deploy/azure/app/csr",
+        "dest": "deploy/azure/app/csr"
+      },
+      {
+        "src": "src/csr/src/csr",
+        "dest": "src/csr"
+      },
+      {
+        "src": "src/csr/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "src/csr/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/csr/yamllint.conf",
+        "dest": "yamllint.conf"
+      },
+      {
+        "src": "src/csr/.gitignore",
+        "dest": ".gitignore"
+      }
+    ]
+  },
+  "netcore": {
+    "gitRepo": "https://github.com/amido/stacks-dotnet.git",
+    "gitRef": "377d51d6dc40f9cd9b4b2f46f9aea5badba6cd11",
+    "localPath": "src/netcore",
+    "fileNameReplacementPaths": ["/src"],
+    "searchValue": "xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/netcore/build/azDevOps/azure/templates/steps/build/build-netcore.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/build-netcore.yml"
+      },
+      {
+        "src": "src/netcore/build/azDevOps/azure/azure-pipelines-netcore-k8s.yml",
+        "dest": "build/azDevOps/azure/azure-pipelines-netcore-k8s.yml"
+      },
+      {
+        "src": "src/netcore/deploy/azure/app/kube",
+        "dest": "deploy/azure/app/kube"
+      },
+      {
+        "src": "src/netcore/deploy/k8s/app/base_api-deploy.yml",
+        "dest": "deploy/k8s/app/base_api-deploy.yml"
+      },
+      {
+        "src": "src/netcore/src",
+        "dest": "src"
+      },
+      {
+        "src": "src/netcore/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/netcore/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "src/netcore/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "jsTestcafe": {
+    "gitRepo": "",
+    "gitRef": "",
+    "localPath": "",
+    "folderMap": [
+      {
+        "src": "test/testcafe",
+        "dest": ""
+      },
+      {
+        "src": "build/azDevOps/azure/azure-pipeline-post-deploy-testcafe.yml",
+        "dest": "build/azDevOps/azure/azure-pipeline-post-deploy-testcafe.yml"
+      }
+    ]
+  },
+  "netcoreSelenium": {
+    "gitRepo": "",
+    "gitRef": "",
+    "localPath": "",
+    "fileNameReplacementPaths": ["/"],
+    "searchValue": "xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "test/xxAMIDOxx.xxSTACKSxx.E2E.Selenium",
+        "dest": ""
+      }
+    ]
+  },
+  "javaSpring": {
+    "gitRepo": "https://github.com/amido/stacks-java.git",
+    "gitRef": "8d8fdc66b8fe4edf3dff2bd4d025902262e7748b",
+    "localPath": "src/java_spring",
+    "fileNameReplacementPaths": [
+      "/java/src/main/java",
+      "/java/src/test/java",
+      "/api-tests/src/test/java"
+    ],
+    "searchValue": "com.xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "src/java_spring/api-tests",
+        "dest": "api-tests"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure",
+        "dest": "build/azDevOps/azure",
+        "excludeFiles": [
+          "azure-pipelines-javaspring-k8s.yml",
+          "build-api-tests",
+          "post-build-tasks",
+          "deploy-post-deploy-tests"
+        ]
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/azure-pipelines-javaspring-k8s.yml",
+        "dest": "build/azDevOps/azure/api-pipeline.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/build-api-tests-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/build-api-tests.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/post-build-tasks-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/post-build-tasks.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests-serenity.yml",
+        "dest": "build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests.yml"
+      },
+      {
+        "src": "src/java_spring/deploy/azure/app/kube",
+        "dest": "deploy/azure/app/kube"
+      },
+      {
+        "src": "src/java_spring/deploy/k8s",
+        "dest": "deploy/k8s"
+      },
+      {
+        "src": "src/java_spring/java",
+        "dest": "java"
+      },
+      {
+        "src": "src/java_spring/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/java_spring/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/java_spring/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "javaSpringKarate": {
+    "gitRepo": "https://github.com/amido/stacks-java.git",
+    "gitRef": "8d8fdc66b8fe4edf3dff2bd4d025902262e7748b",
+    "localPath": "src/java_spring",
+    "fileNameReplacementPaths": ["/java/src/main/java", "/java/src/test/java"],
+    "searchValue": "com.xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "src/java_spring/api-tests-karate",
+        "dest": "api-tests"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure",
+        "dest": "build/azDevOps/azure",
+        "excludeFiles": [
+          "azure-pipelines-javaspring-k8s.yml",
+          "build-api-tests",
+          "post-build-tasks",
+          "deploy-post-deploy-tests"
+        ]
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/azure-pipelines-javaspring-k8s.yml",
+        "dest": "build/azDevOps/azure/api-pipeline.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/build-api-tests-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/build-api-tests.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/post-build-tasks-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/post-build-tasks.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests-karate.yml",
+        "dest": "build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests.yml"
+      },
+      {
+        "src": "src/java_spring/deploy/azure/app/kube",
+        "dest": "deploy/azure/app/kube"
+      },
+      {
+        "src": "src/java_spring/deploy/k8s",
+        "dest": "deploy/k8s"
+      },
+      {
+        "src": "src/java_spring/java",
+        "dest": "java"
+      },
+      {
+        "src": "src/java_spring/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/java_spring/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/java_spring/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "javaSpringCqrs": {
+    "gitRepo": "https://github.com/amido/stacks-java.git",
+    "gitRef": "8e13406051efa4c856ff8e7f7a93acafe427f214",
+    "localPath": "src/java_spring",
+    "fileNameReplacementPaths": [
+      "/java/src/main/java",
+      "/java/src/test/java",
+      "/api-tests/src/test/java"
+    ],
+    "searchValue": "com.xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "src/java_spring/api-tests",
+        "dest": "api-tests"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure",
+        "dest": "build/azDevOps/azure",
+        "excludeFiles": [
+          "azure-pipelines-javaspring-k8s.yml",
+          "build-api-tests",
+          "post-build-tasks",
+          "deploy-post-deploy-tests"
+        ]
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/azure-pipelines-javaspring-k8s.yml",
+        "dest": "build/azDevOps/azure/api-pipeline.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/build-api-tests-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/build-api-tests.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/post-build-tasks-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/post-build-tasks.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests-serenity.yml",
+        "dest": "build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests.yml"
+      },
+      {
+        "src": "src/java_spring/deploy/azure/app/kube",
+        "dest": "deploy/azure/app/kube"
+      },
+      {
+        "src": "src/java_spring/deploy/k8s",
+        "dest": "deploy/k8s"
+      },
+      {
+        "src": "src/java_spring/java",
+        "dest": "java"
+      },
+      {
+        "src": "src/java_spring/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/java_spring/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/java_spring/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "javaSpringCqrsKarate": {
+    "gitRepo": "https://github.com/amido/stacks-java.git",
+    "gitRef": "8e13406051efa4c856ff8e7f7a93acafe427f214",
+    "localPath": "src/java_spring",
+    "fileNameReplacementPaths": ["/java/src/main/java", "/java/src/test/java"],
+    "searchValue": "com.xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "src/java_spring/api-tests-karate",
+        "dest": "api-tests"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure",
+        "dest": "build/azDevOps/azure",
+        "excludeFiles": [
+          "azure-pipelines-javaspring-k8s.yml",
+          "build-api-tests",
+          "post-build-tasks",
+          "deploy-post-deploy-tests"
+        ]
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/azure-pipelines-javaspring-k8s.yml",
+        "dest": "build/azDevOps/azure/api-pipeline.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/build-api-tests-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/build-api-tests.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/build/post-build-tasks-cli.yml",
+        "dest": "build/azDevOps/azure/templates/steps/build/post-build-tasks.yml"
+      },
+      {
+        "src": "src/java_spring/build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests-karate.yml",
+        "dest": "build/azDevOps/azure/templates/steps/deploy/deploy-post-deploy-tests.yml"
+      },
+      {
+        "src": "src/java_spring/deploy/azure/app/kube",
+        "dest": "deploy/azure/app/kube"
+      },
+      {
+        "src": "src/java_spring/deploy/k8s",
+        "dest": "deploy/k8s"
+      },
+      {
+        "src": "src/java_spring/java",
+        "dest": "java"
+      },
+      {
+        "src": "src/java_spring/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/java_spring/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/java_spring/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "javaSpringJenkins": {
+    "gitRepo": "https://github.com/amido/stacks-java.git",
+    "gitRef": "8d8fdc66b8fe4edf3dff2bd4d025902262e7748b",
+    "localPath": "src/java_spring",
+    "fileNameReplacementPaths": ["/java/src/main/java", "/java/src/test/java"],
+    "searchValue": "com.xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "src/java_spring/api-tests",
+        "dest": "api-tests"
+      },
+      {
+        "src": "src/java_spring/build/jenkins/azure",
+        "dest": "build/jenkins/azure"
+      },
+      {
+        "src": "src/java_spring/deploy/azure/app/kube",
+        "dest": "deploy/azure/app/kube"
+      },
+      {
+        "src": "src/java_spring/deploy/k8s",
+        "dest": "deploy/k8s"
+      },
+      {
+        "src": "src/java_spring/java",
+        "dest": "java"
+      },
+      {
+        "src": "src/java_spring/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/java_spring/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "src/java_spring/README.md",
+        "dest": "README.md"
+      },
+      {
+        "src": "src/java_spring/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "javaSerenityTfs": {
+    "gitRepo": "",
+    "gitRef": "",
+    "localPath": "",
+    "fileNameReplacementPaths": ["/src/test/java"],
+    "searchValue": "com.xxAMIDOxx.xxSTACKSxx",
+    "folderMap": [
+      {
+        "src": "test/xxAMIDOxx.xxSTACKSxx.E2E.Serenity",
+        "dest": ""
+      },
+      {
+        "src": "build/azDevOps/azure/azure-pipeline-post-deploy-serenity-frontend.yml",
+        "dest": "build/azDevOps/azure/azure-pipeline-post-deploy-serenity-frontend.yml"
+      }
+    ]
+  },
+  "ssrGke": {
+    "gitRepo": "https://github.com/amido/stacks-typescript-ssr.git",
+    "gitRef": "e6804f2c87548624d61814f7ed5f0f032dc676ec",
+    "localPath": "src/ssr",
+    "folderMap": [
+      {
+        "src": "shared/aux_scripts",
+        "dest": "./aux_scripts"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "shared/_gitignore",
+        "dest": "./.gitignore"
+      },
+      {
+        "src": "src/ssr/build/azDevOps/azure/templates/steps/build/build-ssr.yml",
+        "dest": "build/azDevOps/gcp/templates/steps/build/build-ssr.yml"
+      },
+      {
+        "src": "src/ssr/build/azDevOps/azure/azure-pipelines-ssr-gke.yml",
+        "dest": "build/azDevOps/gcp/app-pipeline.yml"
+      },
+      {
+        "src": "src/ssr/deploy/gcp/app/kube",
+        "dest": "deploy/gcp/app"
+      },
+      {
+        "src": "src/ssr/deploy/k8s/app/base_gke-app-deploy.yml",
+        "dest": "deploy/k8s/app/base_gke-app-deploy.yml"
+      },
+      {
+        "src": "src/ssr/test",
+        "dest": "test"
+      },
+      {
+        "src": "src/ssr/src/ssr",
+        "dest": "src"
+      },
+      {
+        "src": "src/ssr/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/ssr/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "src/ssr/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "ssrGkeJenkins": {
+    "gitRepo": "",
+    "gitRef": "",
+    "localPath": "",
+    "folderMap": [
+      {
+        "src": "shared/aux_scripts",
+        "dest": "./aux_scripts"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "shared/_gitignore",
+        "dest": "./.gitignore"
+      },
+      {
+        "src": "build/jenkins/gcp/ssr-gke.Jenkinsfile",
+        "dest": "build/jenkins/gcp/Jenkinsfile"
+      },
+      {
+        "src": "deploy/gcp/app/kube",
+        "dest": "deploy/gcp/app"
+      },
+      {
+        "src": "deploy/k8s/app/base_gke-app-deploy.yml",
+        "dest": "deploy/k8s/app/base_gke-app-deploy.yml"
+      },
+      {
+        "src": "test",
+        "dest": "test"
+      },
+      {
+        "src": "docs",
+        "dest": "docs"
+      },
+      {
+        "src": "src/ssr",
+        "dest": "src"
+      }
+    ]
+  },
+  "aksInfra": {
+    "gitRepo": "https://github.com/amido/stacks-infrastructure-aks.git",
+    "gitRef": "9c7295dca1943d99a967ffe87f56257d11b8d021",
+    "localPath": "src/aks-infra",
+    "folderMap": [
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "src/aks-infra/deploy/k8s_manifests/aks",
+        "dest": "deploy/k8s_manifests/aks"
+      },
+      {
+        "src": "src/aks-infra/build/azDevOps/azure/azure-pipeline-infrastructure-aks.yml",
+        "dest": "build/azDevOps/azure/azure-pipeline-infrastructure-aks.yml"
+      },
+      {
+        "src": "src/aks-infra/deploy/azure/infra/stacks-aks",
+        "dest": "deploy/azure/stacks-aks"
+      },
+      {
+        "src": "docs",
+        "dest": "docs"
+      },
+      {
+        "src": "src/aks-infra/.gitattributes",
+        "dest": ".gitattributes"
+      },
+      {
+        "src": "src/aks-infra/.gitignore",
+        "dest": ".gitignore"
+      },
+      {
+        "src": "src/aks-infra/yamllint.conf",
+        "dest": "yamllint.conf"
+      }
+    ]
+  },
+  "gkeInfra": {
+    "gitRepo": "",
+    "gitRef": "",
+    "localPath": "",
+    "folderMap": [
+      {
+        "src": "shared/aux_scripts",
+        "dest": "./aux_scripts"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "shared/_gitignore",
+        "dest": "./.gitignore"
+      },
+      {
+        "src": "build/k8s_manifests/gke",
+        "dest": "build/k8s_manifests/gke"
+      },
+      {
+        "src": "build/azDevOps/azure/azure-pipeline-infrastructure-gke.yml",
+        "dest": "build/azDevOps/gcp/infra-pipeline.yml"
+      },
+      {
+        "src": "deploy/gcp/infra/stacks-gke",
+        "dest": "deploy/gcp/infra"
+      },
+      {
+        "src": "docs",
+        "dest": "docs"
+      }
+    ]
+  },
+  "gkeInfraJenkins": {
+    "gitRepo": "",
+    "gitRef": "",
+    "localPath": "",
+    "folderMap": [
+      {
+        "src": "shared/aux_scripts",
+        "dest": "./aux_scripts"
+      },
+      {
+        "src": "shared/README.md",
+        "dest": "./README.md"
+      },
+      {
+        "src": "shared/_gitignore",
+        "dest": "./.gitignore"
+      },
+      {
+        "src": "build/k8s_manifests/gke",
+        "dest": "build/k8s_manifests/gke"
+      },
+      {
+        "src": "build/jenkins/gcp/infra-gke.Jenkinsfile",
+        "dest": "build/jenkins/gcp/Jenkinsfile"
+      },
+      {
+        "src": "deploy/gcp/infra/stacks-gke",
+        "dest": "deploy/gcp/infra"
+      },
+      {
+        "src": "docs",
+        "dest": "docs"
+      }
+    ]
+  }
+}

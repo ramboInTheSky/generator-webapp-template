@@ -1,0 +1,14 @@
+{
+  "jest.debugMode": false,
+  "jest.runAllTestsFirst": true,
+  "jest.coverageFormatter": "DefaultFormatter",
+  "jest.pathToConfig": "./packages/scaffolding-cli/jest.config.json",
+  "jest.rootPath": "./packages/**/src",
+  "jest.pathToJest": "node_modules/.bin/jest",
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "typescript.suggest.enabled": true,
+  "sonarlint.connectedMode.project": {
+    "projectKey": "stacks-webapp-template"
+  },
+  "cSpell.words": ["contentful", "Amido", "amidostacks"]
+}
